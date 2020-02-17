@@ -1,8 +1,10 @@
 {%- if site.texture.showNav -%}
 <div class="navbar">
 	<ul>
-		<a href="#"><li>Home</li></a>
-		<a href="#"><li>About</li></a>
+		<a href="{{ "/ " | relative_url }}"><li>Home</li></a>
+		<a href="{{ "pages/about/" | relative_url }}"><li>About</li></a>
+		<a href="{{ "pages/resources/" | relative_url }}"><li>Resources</li></a>
+		<a href="{{ "pages/cv/" | relative_url }}"><li>CV</li></a>
 	</ul>
 </div>
 {%- endif -%}
