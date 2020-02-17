@@ -36,6 +36,7 @@ texture:
 # - about.md
 
 # Build settings
+remote_theme: thelehhman/texture
 theme: texture
 
 plugins:
