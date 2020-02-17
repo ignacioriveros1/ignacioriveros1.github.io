@@ -1,10 +1,7 @@
-title: Texture Theme
-author: GitHub User
-email: your-email@domain.com
-description:
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+title: Ignacio Riveros Godoy
+author: ignacioriveros1
+email: iriveros@fen.uchile.cl
+description: Coding for fun!
 show_excerpts: true # set to true to show excerpts on the homepage
 # baseurl: /texture
 
@@ -18,22 +15,22 @@ texture:
   title: Ignacio Riveros Godoy
   tagline: Economist & Data Scientist
   date_format: "%b %-d, %Y"
-  style: black
-  showNav: false
-  showPicker: true
+  style: blue
+  showNav: true
+  showPicker: false
 
   # generate social links in footer
   social_links:
-    twitter: thelehhman
-    github:  thelehhman
-    linkedIn: in/thelehhman
+    twitter: ignacioriverosg
+    github:  ignacioriveros1
+    linkedIn: in/iriveros94profile
     rss: rss
 
 
 # If you want to link only specific pages in your header, uncomment
 # this and add the path to the pages in order as they should show up
-#header_pages:
-# - about.md
+header_pages:
+- about.md
 
 remote_theme: thelehhman/texture
 # Build settings
