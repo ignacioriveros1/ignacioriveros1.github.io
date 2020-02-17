@@ -35,9 +35,9 @@ texture:
 #header_pages:
 # - about.md
 
-# Build settings
 remote_theme: thelehhman/texture
-theme: texture
+# Build settings
+# theme: texture
 
 plugins:
   - jekyll-seo-tag
