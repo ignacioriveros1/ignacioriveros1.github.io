@@ -10,7 +10,7 @@ show_excerpts: true # set to true to show excerpts on the homepage
 sass:
   sass_dir: _sass
 
-permalink: /posts/:title/
+# permalink: /posts/:title/
 texture:
   title: Ignacio Riveros Godoy
   tagline: Economist & Data Scientist
@@ -26,11 +26,13 @@ texture:
     linkedIn: in/iriveros94profile
     rss: rss
 
+include: ['_pages']
+
 
 # If you want to link only specific pages in your header, uncomment
 # this and add the path to the pages in order as they should show up
-header_pages:
-- about.md
+# header_pages:
+# - about.md
 
 remote_theme: thelehhman/texture
 # Build settings
