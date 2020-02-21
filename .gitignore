@@ -3,3 +3,11 @@ _site
 .jekyll-cache
 .jekyll-metadata
 vendor
+
+# Latex
+*.aux
+*.fdb_latexmk
+*.log
+*.out
+*.synctex.gz
+*.fls
