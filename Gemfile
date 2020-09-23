@@ -2,3 +2,4 @@
 
 source "https://rubygems.org"
 gem "texture"
+gem "kramdown", ">= 2.3.0"
