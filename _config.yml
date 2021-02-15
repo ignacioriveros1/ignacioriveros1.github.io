@@ -1,43 +1,26 @@
+# Site settings
 title: Ignacio Riveros Godoy
-author: ignacioriveros1
-email: iriveros@fen.uchile.cl
-description: Personal Website
-show_excerpts: true # set to true to show excerpts on the homepage
-# baseurl: /texture
+description: >
+  Personal Website
 
-# Minima date format
-# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
-sass:
-  sass_dir: _sass
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "https://ignacioriveros1.github.io" # the base hostname & protocol for your site
 
-# permalink: /posts/:title/
-texture:
-  title: Ignacio Riveros Godoy
-  tagline: Economist & Data Scientist
-  date_format: "%b %-d, %Y"
-  style: blue
-  showNav: true
-  showPicker: false
-
-  # generate social links in footer
-  social_links:
-    twitter: ignacioriverosg
-    github:  ignacioriveros1
-    linkedIn: in/iriveros94profile
-    rss: rss
+author:
+  fullname: Ignacio Riveros
+  github: ignacioriveros1
+  linkedin: iriveros94profile
+  twitter: ignacioriverosg
+  email: iriveros@fen.uchile.cl
 
 include: ['_pages']
 
 
-# If you want to link only specific pages in your header, uncomment
-# this and add the path to the pages in order as they should show up
-# header_pages:
-# - about.md
+# Syntax highlighting
+highlightstyle: 'agate'
+styles: [agate, androidstudio, arta, asceti, atelier-cave.dark, atelier-cave.light, atelier-dune.dark, atelier-dune.light, atelier-estuary.dark, atelier-estuary.light, atelier-forest.dark, atelier-forest.light, atelier-heath.dark, atelier-heath.light, atelier-lakeside.dark, atelier-lakeside.light, atelier-plateau.dark, atelier-plateau.light, atelier-savanna.dark, atelier-savanna.light, atelier-seaside.dark, atelier-seaside.light, atelier-sulphurpool.dark, atelier-sulphurpool.light, brown_paper, codepen-embed, color-brewer, dark, darkula, default, docco, far, foundation, github, github-gist, googlecode, grayscale, hopscotch, hybrid, idea, ir_black, kimbie.dark, kimbie.light, magula, mono-blue, monokai, monokai_sublime, obsidian, paraiso.dark, paraiso.light, pojoaque, railscast, rainbow, school_book, solarized_dark, solarized_light, styles_list.txt, sunburst, tomorrow, tomorrow-night-blue, tomorrow-night-bright, tomorrow-night, tomorrow-night-eightie, v, xcode, zenburn]
 
-remote_theme: thelehhman/texture
+
 # Build settings
-# theme: texture
-
-plugins:
-  - jekyll-seo-tag
-#  - jekyll-feed
+highlighter: null
+markdown: kramdown

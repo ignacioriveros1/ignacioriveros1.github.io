@@ -1,10 +1,9 @@
 ---
-layout: post
-comments: true
 title:  Executing Stata in R using RStata package.
-categories: Stata  R
+layout: page
+date:   "2020-03-22"
+categories: ["Coding"]
 ---
-
 Try to migrate from one statistical software to another is, most of the time, an arduous task. It is common to hear people who commonly use one statistical software (i.e., Stata) and try to learn another one (i.e., R) desists because of the lack of time to learn it appropriately. On the other hand, several users code in both languages depending on the task to solve switching between scripts and interfaces, losing valuable time.
 
 The main advantage of learning and using both languages is that you can match your programming skills to what is more comfortable for you.  In my opinion, I think that Stata is better handy for data cleaning and working with a single data frame. On the other side, R is far better for plotting using [`ggplot2`](https://ggplot2.tidyverse.org/) package and connecting with other APIs (e.g., Google Maps).
