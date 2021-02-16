@@ -1,6 +1,6 @@
 ---
 title:  Executing Stata in R using RStata package.
-layout: page
+layout: post
 date:   "2020-03-22"
 categories: ["Coding"]
 ---
