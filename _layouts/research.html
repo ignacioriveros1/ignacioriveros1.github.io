@@ -1,15 +1,41 @@
 ---
-layout: default
+layout: page
 ---
 
-<header class="post-header">
-    <h3>{{ page.journal }}</h3>
-    <h2 itemprop="name headline">{{ page.title }}</h2>
-</header>
-
 <div class="post-content">
-    {% if page.coauthors %}<b>Coauthors:</b> {{ page.coauthors }}</br>{% endif %}
-    <b>Abstract:</b> {{ page.abstract | markdownify | remove: '<p>' | remove: '</p>' }}
-    <hr>
+    {% if page.journal %}
+        <b>Journal </b>: 
+        </br> 
+            {{ page.journal }} 
+        </br>
+    {% endif %}
+    </br>
+    {% if page.pub_year %}
+         <b> Year </b>: 
+        </br> 
+            {{ page.pub_year }} 
+        </br>
+    {% endif %}
+    </br>
+    {% if page.coauthors %}
+        <b>Co-authors:</b> 
+        <br> {{ page.coauthors }}</br>
+    {% endif %}
+    <br>
+    {% if page.abstract %}
+        <b>Abstract:</b> 
+            <br>{{ page.abstract | markdownify | remove: '<p>' | remove: '</p>' }}
+    {% endif %}
+    <br>
     {{ content }}
+    <br>
+    <hr>
+    <button onclick="goBack()"> Go Back </button>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+
 </div>
