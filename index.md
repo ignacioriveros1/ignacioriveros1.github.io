@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Hello
-subtitle: My name is Ignacio
+# title: Hello
+# subtitle: My name is Ignacio
 sitemap:
   priority: 0.9
 ---

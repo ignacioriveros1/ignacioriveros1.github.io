@@ -42,7 +42,7 @@
       font-weight: 400; }
 
   strong {
-    color: #16a085; }
+    color: #4a9F81; }
 
   .wrapper {
     max-width: 800px;
@@ -58,12 +58,12 @@
   .logo {
     font-size: 300%;
     font-weight: 700;
-    color: #16a085;
+    color: #4a9F81;
     display: block; }
 
   .menu {
-    color: #828282;
-    font-size: 150%;
+    color: #4a9F81;
+    font-size: 120%;
     margin: 0px;
     margin-top: 6px;
     padding: 0px;
@@ -81,7 +81,7 @@
   .social-links {
     float: right;
     font-size: 150%;
-    color: #828282;
+    color: #059D;
     list-style-type: none; }
 
   .social-links__entry {
@@ -131,6 +131,19 @@
     font-weight: 700;
     color: #333333;
     text-align: center; }
+
+  .list-researchs {
+    list-style-type: none;
+    padding: 0px; }
+
+  .research-teaser__title {
+    font-size: 100%;
+    color: #828282; }
+
+  .research-teaser__month {
+    width: 100%;
+    text-align: center;
+  }
 
 /* =Post page *//*************************************************************/
   .about {
