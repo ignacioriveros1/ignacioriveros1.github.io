@@ -1,0 +1,41 @@
+---
+layout: page
+---
+
+<div class="post-content">
+    {% if page.journal %}
+        <b>Journal </b>: 
+        </br> 
+            {{ page.journal }} 
+        </br>
+    {% endif %}
+    </br>
+    {% if page.pub_year %}
+         <b> Year </b>: 
+        </br> 
+            {{ page.pub_year }} 
+        </br>
+    {% endif %}
+    </br>
+    {% if page.coauthors %}
+        <b>Co-authors:</b> 
+        <br> {{ page.coauthors }}</br>
+    {% endif %}
+    <br>
+    {% if page.abstract %}
+        <b>Abstract:</b> 
+            <br>{{ page.abstract | markdownify | remove: '<p>' | remove: '</p>' }}
+    {% endif %}
+    <br>
+    {{ content }}
+    <br>
+    <hr>
+    <button onclick="goBack()"> Go Back </button>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+
+</div>
