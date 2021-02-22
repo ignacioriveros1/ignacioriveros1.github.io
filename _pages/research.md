@@ -12,7 +12,7 @@ permalink: /research
 <strong>
 {% if category.name %} 
 <center>
-- - - - -  {{ category.name }} - - - - -
+- - - - - - - - - - - - - - - - - - - -  {{ category.name }} - - - - - - - - - - - - - - - - - - - -
 </center>
 {% else %} 
 {{ Print }} 
