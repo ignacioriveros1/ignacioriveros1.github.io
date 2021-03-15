@@ -17,7 +17,7 @@ include: ['_pages']
 
 
 # Syntax highlighting
-highlightstyle: 'monokai'
+highlightstyle: 'agate'
 styles: [agate, androidstudio, arta, asceti, 
          atelier-cave.dark, atelier-cave.light, 
          atelier-dune.dark, atelier-dune.light, 
