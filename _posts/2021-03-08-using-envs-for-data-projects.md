@@ -6,7 +6,15 @@ categories: ["Coding"]
 ---
 
 ## Introduction
-Put here the content
+When I began coding in Python, one of the more confusing issues for me was how to manage appropriately the packages that I installed on my computer.  My usual workflow was that when I needed a new package, I installed it in the default Python system without understanding what I was doing. Consequently, my Python began to raise errors due to the incompatibility issues between packages. Also, my codes didn't work in my colleagues' machines because they didn't have identical versions of the packages that I used. Some months later,  I discovered this mysterious concept of virtual environments. When I find out the utility and how to use them, it entirely improved my coding experience.
+
+A virtual environment is basically an isolated setting where you can specify all the features related to dependencies and their versions to develop a particular project. In simple words, it is installing a new version of a software (said Python, Rstats, Javascript) in your computer that does not share anything with the default version or with other environments. In this context, virtual environments allow you to:
+- Have several versions of Python (or R) according to each project's requirements that you are working on. For example, since Python developers add and deprecate features when releasing new versions, this will help to avoid version errors and incompatibilities.
+- You can specify precisely what packages and which versions do you need for each project. When you define the requirements, your collaborators can also reproduce your environment, avoiding incompatibilities due to different specifications across machines.
+
+There are two well-defined and documented ways of creating virtual environments for Python: [`virtualenv`](https://docs.python.org/3/library/venv.html){:target="_blank"} and [`conda`](https://docs.conda.io/en/latest/){:target="_blank"}.  In one hand, we have [`virtualenv`](https://docs.python.org/3/library/venv.html){:target="_blank"},  an environment manager that allows us to create and control our environments. The easiest way of installing packages is through [`pip`](https://pypi.org/project/pip/){:target="_blank"}. For Stata users, this is equivalent to [`ssc`](https://www.stata.com/support/ssc-installation/){:target="_blank"}. On the other hand, we have [`conda`](https://docs.conda.io/en/latest/){:target="_blank"}, both an environment manager and a package manager. 
+
+In this post, I will teach you how to create environments with both tools and take advantage of this amazing tool!
 
 ## Table of Contents
 1. [Creating an environments using `venv`.](#creating-an-environments-using-venv)
@@ -30,7 +38,7 @@ $ (base) python -m pip install --user virtualenv
 # Windows: 
 $ (base) python -m pip install --user virtualenv
 
-# 3. Using your terminal go to the folder of the project where you are working:
+# 3. Using your terminal, go to the folder of the project where you are working:
 $ (base) cd path/to/your/cool/project
 
 # 4. Now, you can create a virtual environment using 
@@ -100,7 +108,7 @@ $ (base) Remove-Item -LiteralPath "your-env-name" -Force -Recurse
 
 
 ## Creating an environments using `conda`.
-We already have some idea of how to use `venv` together with `pip` to manage environments and packages. An alternative and widely used form to achieve the same is use `conda`. As we discussed earlier, `conda` is both an environment and package management system, so you can create environments and install packages just with `conda`. Depending on your operative system, click [here](https://conda.io/projects/conda/en/latest/user-guide/install/index.html){:target="_blank"} to install `conda`. Once installed, let see how to manage our environment!
+We already have some idea of how to use `venv` together with `pip` to manage environments and packages. An alternative and widely used form to achieve the same is use `conda`. As we discussed earlier, `conda` is both an environment and package management system, so you can create environments and install packages just with `conda`. Depending on your operative system, click [here](https://conda.io/projects/conda/en/latest/user-guide/install/index.html){:target="_blank"} to install `conda`.
 
 {% highlight bash %}
 # 1. Check if conda was installed correctly
@@ -123,15 +131,7 @@ $ (my-env) conda deactivate
 
 {% endhighlight %}
 
-By default, all your environments will live in a directory inside your conda directory. For example, in my machine the environment was saved in `/Applications/anaconda3/envs/your-env-name`. This approach is different for the one followed by `venv`, because the latter creates the environment in the same folder of the project. This approach has (as everything in life) pros and cons. 
-
-<!-- TODO: Write cons -->
-**Pros**
-1. Pro 1
-<!-- In my opinion, one of the pros is that you can create "general purpose environments" to use in multiple projects (e.g. an enviroment oriented to machine learning). This environment can be called from any directory in your machine.  -->
-
-**Cons**
-1. Cons 1
+By default, all your environments will live in a directory inside your `conda` directory. For example, in my machine the environment was saved in `/Applications/anaconda3/envs/your-env-name`. This approach is different for the one followed by `venv`, because the latter creates the environment in the same folder of the project.
 
 {% highlight bash %}
 # Create and env in an specific directory
@@ -231,11 +231,23 @@ dependencies:
 prefix: path/to/env/conda-env
 ```
 
+With `venv`, this workflow is like:
+{% highlight bash %}
+$ (base) cd path/to/your/project
+$ (base) python -m venv venv
+$ (base) source venv/bin/activate
+$ (venv) pip install ipython pytest autopep8 mypy flake8 --upgrade pip
+$ (venv) pip install -r requirements.txt # This is where I specify all the packages I'm gonna use!
+{% endhighlight %}
+
+
+
 ## Final Remarks
+Using virtual environments will help you avoid many headaches for yourself and your colleagues produced by unknown errors related to incompatibility issues. If you like this post or you have some comments, [contact me on Twitter](https://twitter.com/ignacioriverosg){:target="_blank"}! Go ahead and start using environments for your projects!
 
 
 
-## References
+## References and Further Reading
 * [The Definitive Guide to Conda Environments](https://towardsdatascience.com/a-guide-to-conda-environments-bc6180fc533){:target="_blank"}
 * [Python Virtual Environments](https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virtual-env/){:target="_blank"}
 * [Data Science Best Practices: Python Environments](https://towardsdatascience.com/data-science-best-practices-python-environments-354b0dacd43a){:target="_blank"}
