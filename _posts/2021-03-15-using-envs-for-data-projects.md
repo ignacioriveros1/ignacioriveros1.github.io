@@ -1,5 +1,5 @@
 ---
-title:  "Using environments for data projects: A guide for Begginers"
+title:  "Using environments for data projects: A guide for Beginners"
 layout: post
 date:   "2021-03-15"
 categories: ["Coding"]
@@ -17,8 +17,8 @@ There are two well-defined and documented ways of creating virtual environments 
 In this post, I will teach you how to create environments with both tools and take advantage of this amazing tool!
 
 ## Table of Contents
-1. [Creating an environments using `venv`.](#creating-an-environments-using-venv)
-2. [Creating an environments using `conda`.](#creating-an-environments-using-conda)
+1. [Creating environments using `venv`.](#creating-an-environments-using-venv)
+2. [Creating environments using `conda`.](#creating-an-environments-using-conda)
 3. [My personal workflow](#my-personal-workflow)
 4. [Final Remarks](#final-remarks)
 5. [References](#references)
