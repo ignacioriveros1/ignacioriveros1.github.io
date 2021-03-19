@@ -1,0 +1,154 @@
+---
+title: "Stargazer: A solution to produce amazing academic tables"
+output: 
+  html_document:
+    keep_md: False
+    toc: yes
+---
+
+## Introduction
+- Importance of maintaining the tables automatized
+  - Avoid typing errors
+  - Help your future self: numbers changes while working on projects, 
+  - Reproducible Research
+
+- My experience producing tables
+  - Academic Research in Economics <->  Regressions Tables
+  - Stata + Latex
+
+- Some difficulties that I have found with my past workflows 
+  - Million .tex files with the tables
+  - Tricky to customize
+
+- Discovered `stargazer`:
+  - Your table is produced with the model objects that are outputs of your estimations.
+  - Almost every detail of the tables are customizable
+
+## Using `stargazer`
+### Data set
+- Brief description of the dataset.
+Swiss Fertility and Socioeconomic Indicators (1888) [Data](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/swiss.html)
+```{r Dataset}
+data('swiss')
+head(swiss)
+```
+
+### Regression Models
+- Description of what I'm trying to explain.
+
+```{r Model}
+model_1 <- lm(Fertility ~ Catholic + Infant.Mortality, data = swiss)
+model_2 <-
+  lm(Fertility ~ Catholic + Infant.Mortality + Agriculture, data = swiss)
+model_3 <-
+  lm(Fertility ~ Catholic + Infant.Mortality + Agriculture + Examination,
+     data = swiss)
+
+# Checking a summary
+summary(model_1)
+```
+
+
+```{r Default Option, results='asis'}
+# install.packages('stargazer')
+library(stargazer)
+
+stargazer(model_1, model_2, model_3, type = "html")
+```
+
+### Features
+#### Editing Headers
+```{r Editing Headers - Change models labels,  results='asis'}
+stargazer(
+  model_1,
+  model_2,
+  model_3,
+  type = "html",
+  dep.var.caption  = "My new caption",
+  dep.var.labels   = "Fertility (Live births per 1,000 inhabitants)",
+  column.labels = c("OLS", "OLS", "OLS"),
+  dep.var.labels.include = TRUE,
+  # By default is TRUE, change to FALSE to supress the dep var labels,
+  model.numbers = TRUE
+  # By default is TRUE, change to FALSE to supress models' numbers.
+)
+```
+
+
+- Multicolumns 
+```{r Editing Headers - Multicolumn in col labels,  results='asis'}
+stargazer(
+  model_1,
+  model_2,
+  model_3,
+  type = "html",
+  column.labels   = c("OLS", "OLS"),
+  column.separate = c(2, 1) 
+  # First label for the first two columns and the second for the third one
+)
+```
+
+#### Changing Covariates' Labels
+```{r Editing Headers - Covariate Labels,  results='asis'}
+labels <- c(
+  'Catholic (% as opposed to protestant)',
+  'Infant Mortality	*live births who live less than 1 year)',
+  'Agriculture	(% of males involved in agriculture as occupation',
+  'Examination	(% draftees receiving highest mark on army examination)'
+)
+
+stargazer(model_1,
+          model_2,
+          model_3,
+          type = "html",
+          covariate.labels = labels)
+```
+
+#### Editing Stats of the Table
+- Parenthesis Paramenters
+```{r Editing Stats of the Table - Parenthesis Paramenters,  results='asis'}
+# rep_format <- "vcp*" # variable name, coefficient, p value and stars
+rep_format <- "vct" # variable name, coefficient, t statistic without stars
+
+stargazer(model_1,
+          model_2,
+          model_3,
+          type = "html",
+          report = rep_format) 
+```
+
+- Using personalized standard errors and p-values (reference below)
+```{r Editing Stats of the Table - Using personalized standard errors and p-values,  results='asis', warning=FALSE, message=FALSE}
+# install.packages('lmtest')
+# install.packages('sandwich')
+
+library("lmtest") # coeftest
+library("sandwich") # vcovHC
+
+# Robust standar errors
+inference_m1 <-
+  coeftest(model_1, vcov = vcovHC(model_1, type = "HC0"))
+inference_m2 <-
+  coeftest(model_2, vcov = vcovHC(model_2, type = "HC0"))
+inference_m3 <-
+  coeftest(model_3, vcov = vcovHC(model_3, type = "HC0"))
+
+stargazer(
+  model_1,
+  model_2,
+  model_3,
+  se = list(inference_m1[, 2], inference_m2[, 2], inference_m3[, 2]),
+  p = list(inference_m1[, 4], inference_m2[, 4], inference_m3[, 4]),
+  omit.stat = "f",
+  type = "html"
+) 
+```
+#### Editing Footer and Notes
+
+
+
+## References
+- [`stargazer`: beautiful LATEX, HTML and ASCII tables from R statistical output](https://cran.r-project.org/web/packages/stargazer/vignettes/stargazer.pdf){:target="_blank"}
+- [A Stargazer Cheatsheet](https://www.jakeruss.com/cheatsheets/stargazer/){:target="_blank"}
+- [`stargazer` function - RDocumentation](https://www.rdocumentation.org/packages/stargazer/versions/5.2.2/topics/stargazer){:target="_blank"}
+- [Heteroskedasticity Robust Standard Errors in R](https://www.r-econometrics.com/methods/hcrobusterrors/){:target="_blank"}
