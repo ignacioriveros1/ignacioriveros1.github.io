@@ -27,14 +27,16 @@ output:
 ## Using `stargazer`
 ### Data set
 - Brief description of the dataset.
-Swiss Fertility and Socioeconomic Indicators (1888) [Data](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/swiss.html)
+**Source**: [Swiss Fertility and Socioeconomic Indicators (1888)](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/swiss.html).
 ```{r Dataset}
 data('swiss')
 head(swiss)
 ```
 
-### Regression Models
+### Basic Usage
 - Description of what I'm trying to explain.
+- Stargazer support a broad variety of models.
+- For formatting reasons, we are using `html` format.
 
 ```{r Model}
 model_1 <- lm(Fertility ~ Catholic + Infant.Mortality, data = swiss)
@@ -49,15 +51,18 @@ summary(model_1)
 ```
 
 
-```{r Default Option, results='asis'}
+- Really easy to use.
+
+```{r Default Option, results='asis', warning=FALSE, message=FALSE}
 # install.packages('stargazer')
 library(stargazer)
 
 stargazer(model_1, model_2, model_3, type = "html")
 ```
 
-### Features
-#### Editing Headers
+### Editing Headers
+- Within the function, you have many options to format the header of your table. Here I present some options, but there are many more! Check the docs.
+
 ```{r Editing Headers - Change models labels,  results='asis'}
 stargazer(
   model_1,
@@ -74,8 +79,8 @@ stargazer(
 )
 ```
 
-
-- Multicolumns 
+#### Multicolumns
+- Example when you have more than one estimation model (e.g. OLS and WLS).
 ```{r Editing Headers - Multicolumn in col labels,  results='asis'}
 stargazer(
   model_1,
@@ -88,8 +93,10 @@ stargazer(
 )
 ```
 
-#### Changing Covariates' Labels
-```{r Editing Headers - Covariate Labels,  results='asis'}
+### Changing Covariates' Labels
+- Use a vector of strings to format your column names.
+- IMPORTANT: Always check the order of the original coefficients' labels since you may label incorrectly some variables.
+```{r Changing Covariates Labels,  results='asis'}
 labels <- c(
   'Catholic (% as opposed to protestant)',
   'Infant Mortality	*live births who live less than 1 year)',
@@ -104,8 +111,18 @@ stargazer(model_1,
           covariate.labels = labels)
 ```
 
-#### Editing Stats of the Table
-- Parenthesis Paramenters
+### Styles
+- Format tables according to journals' styles.
+- Check styles in this [link](https://rdrr.io/cran/stargazer/man/stargazer_style_list.html){:target="_blank"}
+
+```{r Styles, results='asis', warning=FALSE, message=FALSE}
+stargazer(model_1, model_2, model_3, type = "html", style='aer')
+```
+
+
+### Customizing Stats of the Table
+- Check documentation for formats allowed
+
 ```{r Editing Stats of the Table - Parenthesis Paramenters,  results='asis'}
 # rep_format <- "vcp*" # variable name, coefficient, p value and stars
 rep_format <- "vct" # variable name, coefficient, t statistic without stars
@@ -117,7 +134,8 @@ stargazer(model_1,
           report = rep_format) 
 ```
 
-- Using personalized standard errors and p-values (reference below)
+### Using personalized standard errors and p-values
+- Example of the robust standard errors, or clustered.
 ```{r Editing Stats of the Table - Using personalized standard errors and p-values,  results='asis', warning=FALSE, message=FALSE}
 # install.packages('lmtest')
 # install.packages('sandwich')
@@ -125,7 +143,7 @@ stargazer(model_1,
 library("lmtest") # coeftest
 library("sandwich") # vcovHC
 
-# Robust standar errors
+# Robust standard errors
 inference_m1 <-
   coeftest(model_1, vcov = vcovHC(model_1, type = "HC0"))
 inference_m2 <-
@@ -137,18 +155,88 @@ stargazer(
   model_1,
   model_2,
   model_3,
-  se = list(inference_m1[, 2], inference_m2[, 2], inference_m3[, 2]),
-  p = list(inference_m1[, 4], inference_m2[, 4], inference_m3[, 4]),
+  se = list(NULL, inference_m2[, 2], inference_m3[, 2]), # If NULL use model_* errors
+  p = list(NULL, inference_m2[, 4], inference_m3[, 4]), # If NULL use model_* pvalues
   omit.stat = "f",
   type = "html"
 ) 
 ```
-#### Editing Footer and Notes
 
 
+### Customizing Footer Stats
+- [List of statistics](https://www.rdocumentation.org/packages/stargazer/versions/5.2.2/topics/stargazer_stat_code_list){:target="_blank"}
+```{r Editing Footer and Notes - Footer stats,  results='asis'}
+stargazer(
+  model_1,
+  model_2,
+  model_3,
+  type = "html",
+  keep.stat = c("n", "rsq")
+) 
+```
+
+### Adding new lines
+- Example when using Fixed Effects or Not reported variables in the table
+```{r Editing Footer and Notes - Adding lines,  results='asis'}
+
+stargazer(
+  model_1,
+  model_2,
+  model_3,
+  type = "html",
+  keep.stat = c("n", "rsq"),
+  add.lines = list(
+    c("County Fixed Effect", "No", "Yes", 'Yes'),
+    c("Time Fixed Effect", "Yes", "No", 'Yes')
+  )
+) 
+```
+
+### Customizing Notes
+- I personally, don't like how the labels are worked in the function.
+```{r Editing Footer and Notes - Editing Notes,  results='asis'}
+
+stargazer(
+  model_1,
+  model_2,
+  model_3,
+  type = "html",
+  keep.stat = c("n", "rsq"),
+  add.lines = list(
+    c("County Fixed Effect", "No", "Yes", 'Yes'),
+    c("Time Fixed Effect", "Yes", "No", 'Yes')
+  ),
+  notes.label = 'Comments', # Edit here the label
+  notes = 'Own elaboration based on swiss data. Significance levels: * 90%, ** 95%, *** 99%.',
+  notes.append = FALSE, # TRUE append the significance levels
+  notes.align = 'l' # c center, r right
+) 
+```
+
+
+### Stargazer and LaTeX
+- `stargazer` + $\LaTeX$ = Winner Combination! 
+```{r Stargazer and LaTeX - Editing Notes, warning=FALSE, message=FALSE}
+stargazer(
+  model_1,
+  model_2,
+  model_3,
+  type = "latex",
+  # out = 'path/of/your/table.tex'
+  header = FALSE, # If TRUE, stargazer print the header with the citation and package info
+  float = TRUE # If FALSE, the function don't returns the table in a table environment
+) 
+```
+
+
+## Final Thoughts
+- Great tool for scientific research!
+- `python` version is in `pip`!
+- Combination with `rmarkdown` is amazing!
 
 ## References
 - [`stargazer`: beautiful LATEX, HTML and ASCII tables from R statistical output](https://cran.r-project.org/web/packages/stargazer/vignettes/stargazer.pdf){:target="_blank"}
 - [A Stargazer Cheatsheet](https://www.jakeruss.com/cheatsheets/stargazer/){:target="_blank"}
 - [`stargazer` function - RDocumentation](https://www.rdocumentation.org/packages/stargazer/versions/5.2.2/topics/stargazer){:target="_blank"}
 - [Heteroskedasticity Robust Standard Errors in R](https://www.r-econometrics.com/methods/hcrobusterrors/){:target="_blank"}
+- []
