@@ -26,17 +26,16 @@ output:
 
 ## Using `stargazer`
 ### Data set
-- Brief description of the dataset.
-**Source**: [Swiss Fertility and Socioeconomic Indicators (1888)](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/swiss.html).
+According to the documentation, `swiss` data contains "*Standardized fertility measure and socio-economic indicators for each of 47 French-speaking provinces of Switzerland at about 1888*". You can find more details [here](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/swiss.html){:target="_blank"}.
+
 ```{r Dataset}
 data('swiss')
 head(swiss)
 ```
 
 ### Basic Usage
-- Description of what I'm trying to explain.
-- Stargazer support a broad variety of models.
-- For formatting reasons, we are using `html` format.
+We will use a Linear Regression model to explain how Fertility is affected by several variables for explanatory purposes. Of course, `stargazer` supports a broader set of packages, including Instrumental Variables, Fixed Effects Models, among many others. Check the [supported models](https://rdrr.io/cran/stargazer/man/stargazer_models.html){:target="_blank"} to see all the possibilities. Finally, I will format all the tables in `html` to show the outputs. In the last part of this post, I will show how to use `LaTeX` outputs.  
+**Disclaimer**: I intend to show how to draw tables using `stargazer`, so do not expect too much from these models.
 
 ```{r Model}
 model_1 <- lm(Fertility ~ Catholic + Infant.Mortality, data = swiss)
@@ -51,7 +50,7 @@ summary(model_1)
 ```
 
 
-- Really easy to use.
+The package is straightforward to use. As we see in the example, just passed the objects with the estimation parameters to the table, and you will have an excellent output.
 
 ```{r Default Option, results='asis', warning=FALSE, message=FALSE}
 # install.packages('stargazer')
@@ -61,7 +60,8 @@ stargazer(model_1, model_2, model_3, type = "html")
 ```
 
 ### Editing Headers
-- Within the function, you have many options to format the header of your table. Here I present some options, but there are many more! Check the docs.
+Of course, your requirements will vary depending on which results do you want to show. Within this function, you have many options to format the header of your table. Here I present some features that you can modify (`dep.var.caption`, `dep.var.labels`, `column.labels`, `dep.var.labels.include`, `model.numbers`), but there are many more!
+
 
 ```{r Editing Headers - Change models labels,  results='asis'}
 stargazer(
@@ -80,22 +80,24 @@ stargazer(
 ```
 
 #### Multicolumns
-- Example when you have more than one estimation model (e.g. OLS and WLS).
+You can arrange the `column.labels` array to work with multicolumn using `column.separate`.
+For instance,  in econometrics, it is common to use the column labels to reference the estimation strategy used to estimate a set of coefficients. Imagine that you are working on the same three models presented above, with the difference that you are estimating the third one with *Instrumental Variables* (IV) approach instead of *Ordinary Least Squares* (OLS).
+
 ```{r Editing Headers - Multicolumn in col labels,  results='asis'}
 stargazer(
   model_1,
   model_2,
   model_3,
   type = "html",
-  column.labels   = c("OLS", "OLS"),
+  column.labels   = c("OLS", "IV"),
   column.separate = c(2, 1) 
   # First label for the first two columns and the second for the third one
 )
 ```
 
 ### Changing Covariates' Labels
-- Use a vector of strings to format your column names.
-- IMPORTANT: Always check the order of the original coefficients' labels since you may label incorrectly some variables.
+Change the covariate labels is also super easy. Just pass an array with your desired titles to the parameter `covariates.labels`.  My suggestion is that you ALWAYS must check the order of the features used in an estimation model because you could wrongly label a variable with another name.
+
 ```{r Changing Covariates Labels,  results='asis'}
 labels <- c(
   'Catholic (% as opposed to protestant)',
@@ -112,8 +114,7 @@ stargazer(model_1,
 ```
 
 ### Styles
-- Format tables according to journals' styles.
-- Check styles in this [link](https://rdrr.io/cran/stargazer/man/stargazer_style_list.html){:target="_blank"}
+This package has a parameter to configure the table's custom according to several academic journals' aesthetics. For example, in the model below, I present a table with *American Economic Review* style. You can check all the options at this [link](https://rdrr.io/cran/stargazer/man/stargazer_style_list.html){:target="_blank"}.
 
 ```{r Styles, results='asis', warning=FALSE, message=FALSE}
 stargazer(model_1, model_2, model_3, type = "html", style='aer')
@@ -121,7 +122,7 @@ stargazer(model_1, model_2, model_3, type = "html", style='aer')
 
 
 ### Customizing Stats of the Table
-- Check documentation for formats allowed
+You can customize how to present the coefficients and the statistical inference using the `report` parameter. In my opinion, the syntax of this parameter a little tricky. Here are two examples of how to modify this feature:  
 
 ```{r Editing Stats of the Table - Parenthesis Paramenters,  results='asis'}
 # rep_format <- "vcp*" # variable name, coefficient, p value and stars
@@ -135,7 +136,9 @@ stargazer(model_1,
 ```
 
 ### Using personalized standard errors and p-values
-- Example of the robust standard errors, or clustered.
+In general, a best practice while estimating linear models is to use robust standard errors since the good asymptotic properties allow us to improve the estimation's statistical inference.
+For `Stata` users, the option `, r` at the end of every regression performs this task. Unfortunately, in R, the [approach](https://www.r-econometrics.com/methods/hcrobusterrors/){:target="_blank"} is not as direct as in `Stata` to use these errors. Nonetheless, `stargazer` allow us to use customized standard errors and p-values for our tables.
+
 ```{r Editing Stats of the Table - Using personalized standard errors and p-values,  results='asis', warning=FALSE, message=FALSE}
 # install.packages('lmtest')
 # install.packages('sandwich')
@@ -143,7 +146,8 @@ stargazer(model_1,
 library("lmtest") # coeftest
 library("sandwich") # vcovHC
 
-# Robust standard errors
+# Robust standard errors: 
+# Check https://www.r-econometrics.com/methods/hcrobusterrors/ for more details/
 inference_m1 <-
   coeftest(model_1, vcov = vcovHC(model_1, type = "HC0"))
 inference_m2 <-
@@ -164,7 +168,7 @@ stargazer(
 
 
 ### Customizing Footer Stats
-- [List of statistics](https://www.rdocumentation.org/packages/stargazer/versions/5.2.2/topics/stargazer_stat_code_list){:target="_blank"}
+Of course, you don't need to show always the same indicators in every table. With the option `keep.stat`, you can specify an array of statistics to show in your table. In this example, I only show the sample size and the R-squared. You can check the [list of statistics](https://www.rdocumentation.org/packages/stargazer/versions/5.2.2/topics/stargazer_stat_code_list){:target="_blank"} here!
 ```{r Editing Footer and Notes - Footer stats,  results='asis'}
 stargazer(
   model_1,
@@ -176,7 +180,7 @@ stargazer(
 ```
 
 ### Adding new lines
-- Example when using Fixed Effects or Not reported variables in the table
+In some context, it is helpful to add lines at the end of the table. For example, when using Fixed Effects, it is common to see an array indicating if an estimation is controlling for some Fixed Effect or not. From my perspective, the best way to achieve this is to use the `add.lines` option. Here, you specify a list of arrays with all the lines that you want to add.
 ```{r Editing Footer and Notes - Adding lines,  results='asis'}
 
 stargazer(
@@ -193,7 +197,7 @@ stargazer(
 ```
 
 ### Customizing Notes
-- I personally, don't like how the labels are worked in the function.
+I wouldn't say I like this option very much because the notes are introduced in a multicolumn, affecting the table's width depending on the notes' length. Nevertheless, I leave some examples of how to customize them.
 ```{r Editing Footer and Notes - Editing Notes,  results='asis'}
 
 stargazer(
@@ -213,9 +217,8 @@ stargazer(
 ) 
 ```
 
-
 ### Stargazer and LaTeX
-- `stargazer` + $\LaTeX$ = Winner Combination! 
+`stargazer` and `LaTeX` are a great combination together! Change the parameter `type`  to `"latex"` and the package will do the work for you. You can also save the output in an external file specifying the parameter `out`. Additionally, if you don't want your table in the table environment, use the option `float`. In future posts, I will go deeper on this issue.
 ```{r Stargazer and LaTeX - Editing Notes, warning=FALSE, message=FALSE}
 stargazer(
   model_1,
@@ -239,4 +242,4 @@ stargazer(
 - [A Stargazer Cheatsheet](https://www.jakeruss.com/cheatsheets/stargazer/){:target="_blank"}
 - [`stargazer` function - RDocumentation](https://www.rdocumentation.org/packages/stargazer/versions/5.2.2/topics/stargazer){:target="_blank"}
 - [Heteroskedasticity Robust Standard Errors in R](https://www.r-econometrics.com/methods/hcrobusterrors/){:target="_blank"}
-- []
+- [stargazer_models: `stargazer`: list of supported objects](https://rdrr.io/cran/stargazer/man/stargazer_models.html){:target="_blank"}
