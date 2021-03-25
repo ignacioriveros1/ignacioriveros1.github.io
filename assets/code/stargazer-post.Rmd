@@ -2,27 +2,15 @@
 title: "Stargazer: A solution to produce amazing academic tables"
 output: 
   html_document:
-    keep_md: False
-    toc: yes
+    keep_md: True
+    toc: no
 ---
 
 ## Introduction
-- Importance of maintaining the tables automatized
-  - Avoid typing errors
-  - Help your future self: numbers changes while working on projects, 
-  - Reproducible Research
+As an economist working as a research assistant, I would hold that producing tables with estimation results is one of the job's main tasks. As the research project flows, the results change, and as a consequence, the tables. With this in mind, the importance of maintaining the tables pipeline automatized is a crucial task. In the first place, you avoid typing errors due to manual typing, and most importantly, you prevent manually typing a table hand. Second, when you have a code to make the results for you, your results are reproducible. This issue is important to share the code with other researchers, as well as your future self.
 
-- My experience producing tables
-  - Academic Research in Economics <->  Regressions Tables
-  - Stata + Latex
+ In this post, I will show how to achieve amazing automatized regression tables using the R package called `stargazer`. This fantastic package  (which name is also an incredible song written by [Rainbow](https://youtu.be/rVXy1OhaERY){:target="_blank"}) produce table outputs with the data objects that are outputs of your estimations. Almost every detail of the tables is customizable!
 
-- Some difficulties that I have found with my past workflows 
-  - Million .tex files with the tables
-  - Tricky to customize
-
-- Discovered `stargazer`:
-  - Your table is produced with the model objects that are outputs of your estimations.
-  - Almost every detail of the tables are customizable
 
 ## Using `stargazer`
 ### Data set
@@ -218,7 +206,7 @@ stargazer(
 ```
 
 ### Stargazer and LaTeX
-`stargazer` and `LaTeX` are a great combination together! Change the parameter `type`  to `"latex"` and the package will do the work for you. You can also save the output in an external file specifying the parameter `out`. Additionally, if you don't want your table in the table environment, use the option `float`. In future posts, I will go deeper on this issue.
+`stargazer` and `LaTeX` are a great combination together! Change the parameter `type`  to `"latex"` and the package will do the work for you. You can also save the output in an external file specifying the parameter `out`. Additionally, if you don't want your table in the `table` environment (i.e. you just want the `tabular`), use the option `float`. In future posts, I will go deeper on this issue.
 ```{r Stargazer and LaTeX - Editing Notes, warning=FALSE, message=FALSE}
 stargazer(
   model_1,
@@ -233,9 +221,9 @@ stargazer(
 
 
 ## Final Thoughts
-- Great tool for scientific research!
-- `python` version is in `pip`!
-- Combination with `rmarkdown` is amazing!
+I found `stargazer` a terrific tool for scientific research. It is intuitive to use and is highly customizable.  There is also a `python` [version](https://pypi.org/project/stargazer/){:target="_blank"} under development! 
+
+I hope this post will help you with your tables! :)
 
 ## References
 - [`stargazer`: beautiful LATEX, HTML and ASCII tables from R statistical output](https://cran.r-project.org/web/packages/stargazer/vignettes/stargazer.pdf){:target="_blank"}
