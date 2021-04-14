@@ -2,7 +2,7 @@
 title:  Executing Stata in R using RStata package.
 layout: post
 date:   "2020-03-22"
-categories: ["Coding"]
+categories: ["R"]
 ---
 Try to migrate from one statistical software to another is, most of the time, an arduous task. It is common to hear people who commonly use one statistical software (i.e., Stata) and try to learn another one (i.e., R) desists because of the lack of time to learn it appropriately. On the other hand, several users code in both languages depending on the task to solve switching between scripts and interfaces, losing valuable time.
 

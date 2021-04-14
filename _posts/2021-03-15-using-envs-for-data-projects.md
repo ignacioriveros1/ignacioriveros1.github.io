@@ -2,7 +2,7 @@
 title:  "Using environments for data projects: A guide for Beginners"
 layout: post
 date:   "2021-03-15"
-categories: ["Coding"]
+categories: ["Python"]
 ---
 
 ## Introduction
