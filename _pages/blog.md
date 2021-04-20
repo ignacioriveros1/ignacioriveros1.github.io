@@ -1,6 +1,8 @@
 ---
 layout: page
-title: Posts & Resources
+title: Posts
+subtitle: Hope that you will find something useful here!
+
 permalink: /posts
 ---
 

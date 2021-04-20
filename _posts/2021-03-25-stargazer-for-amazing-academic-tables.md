@@ -2,7 +2,7 @@
 title:  "Stargazer: A solution to produce amazing academic tables"
 layout: post
 date:   "2021-03-25"
-categories: ["Coding"]
+categories: ["R"]
 ---
 
 ## Introduction
