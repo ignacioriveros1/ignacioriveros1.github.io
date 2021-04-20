@@ -1,0 +1,98 @@
+---
+title: "All you need is Rmarkdown!"
+output: 
+  bookdown::html_document2:
+    keep_md: True
+    toc: no
+---
+
+# Introduction
+
+- 1) Diversity of options to write research papers or academic slides.
+    - Word, Latex, PowerPoint, Beamer
+
+- 2) Separation between manuscript and code
+    - Increase the risk of typing errors.
+    - Increase the amount of work spent in non-static attributes (i.e. figures and tables in word).
+    - The reproducibility of the paper become more difficult.
+
+- 3) A solution: `Rmarkdown`
+    - Execute R, Python or Stata in one place to produce your statistical analysis.
+    - Use $\LaTeX$ for equations and more!
+    - Markdown syntax for the body of the text.
+    - Configure the document with a `YAML` header.
+
+- 4) Focus of the post
+  - Pdf documents.
+  - Mention the other types (HTML, Slides, Dashboards)
+
+# Executing code within an Rmarkdown Document.
+```{r Loading Data}
+library(datasets)
+data(iris)
+
+mean_Sepal.Lenght <- mean(iris$Sepal.Length)
+```
+
+I usually run a `Setup` chunk for all the Rmarkdown file. In all my projects, I include a [settings.R](https://gist.github.com/ignacioriveros1/797bc12b7eb161caba88c43cd7e6fe78) script where I load all the packages for the project and the local paths of the users that works on them.
+
+```{r Setup}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  warning = F,
+  error = F,
+  tidy = T,
+  tidy.opts = list(width.cutoff = 50),
+  collapse = T,
+  warning = FALSE,
+  error = FALSE,
+  message = FALSE,
+  comment = "",
+  fig.cap = " "
+)
+# These options are tuned for manuscript/presentation.
+# They basically run R in the background except for spitting out figures/tables
+# They also cache results so that you don't have to run your whole analysis every time you fix a typo
+
+# source('settings.R', echo = FALSE)
+```
+
+
+# Executing Inline Code
+To execute inline code you have to use the following: \` r yourcode  \`.
+
+For example, using the chunk of above, I can introduce the mean length of Sepal in my text, which is `r mean_Sepal.Lenght`, using ` r mean_Sepal.Lenght`. Alternatively, I could calculate the same value (`r mean(iris$Sepal.Length)`) using the function in the inline code directly (` r mean(iris$Sepal.Length)`). Also, If I don't like the number of decimals, I can use ` r round(mean_Sepal.Lenght)` function to convert `r mean_Sepal.Lenght` into `r round(mean_Sepal.Lenght,2)`.
+
+# Tables 
+
+# Figures
+```{r FigureExample, results='asis', fig.cap="Quadratic Function"}
+x <- 1:100
+y <- (1:100)^2
+
+plot(x, y)
+
+```
+
+Here I can reference Figure \@ref(fig:FigureExample)
+
+
+# LaTeX
+$$E = mc^2$$
+
+# Markdown
+
+# Bibliography
+
+# Configuring the document with YAML
+
+# My manuscript template.
+
+# Final Thoughts
+
+# References and Further reading
+- [R markdown from RStudio](https://rmarkdown.rstudio.com/lesson-1.html)
+- [R markdown from RStudio: Cheatsheet](https://rmarkdown.rstudio.com/lesson-15.html)
+- [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+- [RMarkdown for Scientists](https://rmd4sci.njtierney.com)
+
