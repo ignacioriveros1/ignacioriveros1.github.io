@@ -25,18 +25,64 @@ output:
 - 4) Focus of the post
   - Pdf documents.
   - Mention the other types (HTML, Slides, Dashboards)
+  - Emphasize that this post is not an exhaustive revision of all the capabilities of Rmarkdown.
 
-# Executing code within an Rmarkdown Document.
-```{r Loading Data}
-library(datasets)
-data(iris)
+# Creating a Rmarkdown document
 
-mean_Sepal.Lenght <- mean(iris$Sepal.Length)
+# Markdown
+In my opinion, one of the features that make Rmarkdown a easy to learn tool is Markdown. "*Markdown is a text-to-HTML conversion tool for web writers. Markdown allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid XHTML (or HTML).* ([John Gruber](https://daringfireball.net/projects/markdown/))". This language is super easy to learn and it is simple to format. For instance:
+```
+## Header
+
+*Italic Letters*
+
+**Bold Letters**
+
+* List
+* List
+* List
+
+1. Numbered List
+2. Numbered List
+3. Numbered List
+
+`code`
+
+Hello, I'm writing some text in my Rmarkdown document. Markdown is super easy to use!
+
+[Check more tips and tricks](https://www.markdownguide.org/cheat-sheet/)
 ```
 
-I usually run a `Setup` chunk for all the Rmarkdown file. In all my projects, I include a [settings.R](https://gist.github.com/ignacioriveros1/797bc12b7eb161caba88c43cd7e6fe78) script where I load all the packages for the project and the local paths of the users that works on them.
+## Header
 
-```{r Setup}
+*Italic Letters*
+
+**Bold Letters**
+
+* List
+* List
+* List
+
+1. Numbered List
+2. Numbered List
+3. Numbered List
+
+`code`
+
+Hello, I'm writing in my Rmarkdown document. Markdown is super easy to use!
+
+[Check more tips and tricks](https://www.markdownguide.org/cheat-sheet/)
+
+# Executing code within an Rmarkdown Document.
+Run code in Rmarkdown is really simple. You only need to create a chunk of code using `"```"`. Alternatively, if you use RStudio (which is the IDE that I definitely recommend for coding in R) you can use the option "Insert a new code chunk".
+
+```{r My example Chunk that is not going to be executed, eval=FALSE}
+print('Hello World')
+```
+
+I usually run a `Setup` chunk at the beginning of all my Rmarkdown documents In all my projects, I include a [settings.R](https://gist.github.com/ignacioriveros1/797bc12b7eb161caba88c43cd7e6fe78) script where I load all the packages thet I will use together with the local paths of the users' machines that will collaborate.
+
+```{r Setup, eval=FALSE}
 knitr::opts_chunk$set(
   echo = FALSE,
   warning = F,
@@ -52,21 +98,33 @@ knitr::opts_chunk$set(
 )
 # These options are tuned for manuscript/presentation.
 # They basically run R in the background except for spitting out figures/tables
-# They also cache results so that you don't have to run your whole analysis every time you fix a typo
 
-# source('settings.R', echo = FALSE)
+source('settings.R', echo = FALSE)
 ```
 
+These chunks support the execution of a wide variety of codes. You can execute Python (using `reticulate`), JavaScript, Bash, SQL querys, and also Stata (check [this post](.) to see how).
 
 # Executing Inline Code
-To execute inline code you have to use the following: \` r yourcode  \`.
+To execute inline code you have to use the following: `(r) yourcode` without the parenthesis in the `r`. Lets see a simple example using the `iris` dataset.
+```{r Loading Data}
+library(datasets)
+data(iris)
 
-For example, using the chunk of above, I can introduce the mean length of Sepal in my text, which is `r mean_Sepal.Lenght`, using ` r mean_Sepal.Lenght`. Alternatively, I could calculate the same value (`r mean(iris$Sepal.Length)`) using the function in the inline code directly (` r mean(iris$Sepal.Length)`). Also, If I don't like the number of decimals, I can use ` r round(mean_Sepal.Lenght)` function to convert `r mean_Sepal.Lenght` into `r round(mean_Sepal.Lenght,2)`.
+mean_Sepal.Lenght <- mean(iris$Sepal.Length)
+```
 
-# Tables 
+```
+For example, using the chunk of above, I can introduce the mean length of Sepal in my text, which is `(r) mean_Sepal.Lenght`. Alternatively, I could calculate the same value (`(r) mean(iris$Sepal.Length)`) using the function in the inline code directly. Also, If I don't like the number of decimals, I can use `round` function to convert `(r) mean_Sepal.Lenght` into `(r) round(mean_Sepal.Lenght,2)`.
+```
+
+For example, using the chunk of above, I can introduce the mean length of Sepal in my text, which is `r mean_Sepal.Lenght`. Alternatively, I could calculate the same value (`r mean(iris$Sepal.Length)`) using the function in the inline code directly. Also, If I don't like the number of decimals, I can use `round` function to convert `r mean_Sepal.Lenght` into `r round(mean_Sepal.Lenght,2)`.
+
+# Tables
 
 # Figures
-```{r FigureExample, results='asis', fig.cap="Quadratic Function"}
+To include a figure, just create it using `plot` or `ggplot`.
+
+```{r FigureExample, fig.cap="Quadratic Function"}
 x <- 1:100
 y <- (1:100)^2
 
@@ -74,17 +132,92 @@ plot(x, y)
 
 ```
 
-Here I can reference Figure \@ref(fig:FigureExample)
+If you don't want the code chunk to appear in the document, include the chunk with the option `echo=FALSE`. Also, some functions will print some warnings and messages. If you want to turn them off, include `warning=FALSE, message=FALSE` in the preamble of your code chunk.
+```
+{r Figure2, fig.cap="My amazing figure", echo=FALSE, warning=FALSE}
+# The code of this plot was extracted from https://www.publichealth.columbia.edu/sites/default/files/media/fdawg_ggplot2.html
+library(ggplot2)
+density2 <- ggplot(data=iris, aes(x=Sepal.Width, fill=Species))
+density2 + geom_density(stat="density", alpha=I(0.2)) +
+  xlab("Sepal Width") +  ylab("Density") + ggtitle("Histogram & Density Curve of Sepal Width")
+```
+
+```{r Figure2, fig.cap="My amazing figure", echo=FALSE, warning=FALSE}
+# Plot from https://www.publichealth.columbia.edu/sites/default/files/media/fdawg_ggplot2.html
+library(ggplot2)
+density2 <- ggplot(data=iris, aes(x=Sepal.Width, fill=Species))
+density2 + geom_density(stat="density", alpha=I(0.2)) +
+  xlab("Sepal Width") +  ylab("Density")
+```
+
+```
+Using `bookdown::html_document2`, I can reference Figure \@ref(fig:FigureExample) and \@ref(fig:Figure2). To make this work, it is important to label your figure chunks without spaces.
+```
+Using `bookdown::html_document2`, I can reference Figure \@ref(fig:FigureExample) and \@ref(fig:Figure2). To make this work, it is important to **label your figure chunks without spaces or special characters**.
 
 
 # LaTeX
+```
+Rmarkdown comes with $\LaTeX$ incorporated. You can produce environments, equations, and use most of LaTeX cabalities inside your notebooks. Let's see some examples:
+
+$$E = mc^2$$
+```
+
+Rmarkdown comes with $\LaTeX$ incorporated. You can produce environments, equations, and most of LaTeX capabiliteies inside your notebooks. Let's see some examples:
+
 $$E = mc^2$$
 
-# Markdown
+You also, can number equations using `equation` environment together with a label.
+```
+\begin{equation}
+\hat{\beta} = (X'X)^{-1}X'Y (\#eq:eq1)
+\end{equation} 
+ 
+The model \@ref(eq:eq1) is the estimation by OLS.
+```
+\begin{equation}
+\hat{\beta} = (X'X)^{-1}X'Y (\#eq:eq1)
+\end{equation} 
+ 
+The model \@ref(eq:eq1) is the estimation by OLS.
 
-# Bibliography
+You also can include `tikz` graphs inside your Rmarkdown documents. Check this [SO question](https://stackoverflow.com/questions/27880563/tikz-in-r-markdown) to see more information.
+
+```
+\begin{tikzpicture}
+\begin{axis}[xmax=9,ymax=9, samples=50]
+  \addplot[blue, ultra thick] (x,x*x);
+  \addplot[red,  ultra thick] (x*x,x);
+\end{axis}
+\end{tikzpicture}
+
+# Code from https://stackoverflow.com/questions/27880563/tikz-in-r-markdown
+```
 
 # Configuring the document with YAML
+Another thing that I love from Rmarkdown is that the global configuration of the document is with `YAML`. According to [Wikipedia](https://en.wikipedia.org/wiki/YAML), ""*YAML (a recursive acronym for "YAML Ain't Markup Language") is a human-readable data-serialization language. It is commonly used for configuration files and in applications where data is being stored or transmitted*".
+
+This way of configuring a document is far more easier than $\LaTeX$ preambles (not recommended for humans), mainly because YAML is readable. For example, the header of this Rmarkdown looks like this:
+
+```{yaml}
+title: "All you need is Rmarkdown!"
+output: 
+  bookdown::html_document2:
+    keep_md: True
+    toc: no
+```
+
+For example, if I would like to add a Table of Contents and not keep the Markdown file as output of the Rmarkdown, the header will look like:
+```{yaml}
+title: "All you need is Rmarkdown!"
+output: 
+  bookdown::html_document2:
+    keep_md: False
+    toc: yes
+```
+
+
+For more configurations, I suggest to check [this guide](https://bookdown.org/yihui/rmarkdown/documents.html).
 
 # My manuscript template.
 
@@ -95,4 +228,7 @@ $$E = mc^2$$
 - [R markdown from RStudio: Cheatsheet](https://rmarkdown.rstudio.com/lesson-15.html)
 - [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
 - [RMarkdown for Scientists](https://rmd4sci.njtierney.com)
-
+- [Data Visualization with ggplot2](https://www.publichealth.columbia.edu/sites/default/files/media/fdawg_ggplot2.html)
+- [TikZ in R Markdown](https://stackoverflow.com/questions/27880563/tikz-in-r-markdown)
+- [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
+- [YAML](https://en.wikipedia.org/wiki/YAML)
