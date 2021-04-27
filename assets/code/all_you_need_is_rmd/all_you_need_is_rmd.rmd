@@ -383,3 +383,4 @@ For more configurations, I suggest to check [this guide](https://bookdown.org/yi
 - [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
 - [YAML](https://en.wikipedia.org/wiki/YAML)
 - [Bibliographies and Citations](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html)
+- [Rmarkdown Cookbook: Apply custom CSS](https://bookdown.org/yihui/rmarkdown-cookbook/html-css.html)
