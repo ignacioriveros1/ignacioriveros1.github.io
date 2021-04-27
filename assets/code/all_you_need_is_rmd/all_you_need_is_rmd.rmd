@@ -99,7 +99,7 @@ knitr::opts_chunk$set(
 # These options are tuned for manuscript/presentation.
 # They basically run R in the background except for spitting out figures/tables
 
-source('settings.R', echo = FALSE)
+# source('settings.R', echo = FALSE)
 ```
 
 These chunks support the execution of a wide variety of codes. You can execute Python (using `reticulate`), JavaScript, Bash, SQL querys, and also Stata (check [this post](.) to see how).
