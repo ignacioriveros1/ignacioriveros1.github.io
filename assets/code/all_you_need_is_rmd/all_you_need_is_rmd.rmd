@@ -120,6 +120,147 @@ For example, using the chunk of above, I can introduce the mean length of Sepal 
 For example, using the chunk of above, I can introduce the mean length of Sepal in my text, which is `r mean_Sepal.Lenght`. Alternatively, I could calculate the same value (`r mean(iris$Sepal.Length)`) using the function in the inline code directly. Also, If I don't like the number of decimals, I can use `round` function to convert `r mean_Sepal.Lenght` into `r round(mean_Sepal.Lenght,2)`.
 
 # Tables
+```{css, echo = FALSE}
+
+table, td, th {
+  border: none;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+```
+
+My favorite way of producing tables in Rmarkdown is with `stargazer`. This package supports a wide variety of functionalities, mainly oriented for regressions tables. Check [this post](link_to_the_post) in which I explain how to use it and show some examples. Here, I will show two examples of how to combine `stargazer` with Rmarkdown.
+
+In the first place, let's produce a descriptive statistic tables. We will use `iris` data:
+```{r Des Sta, results='asis', warning=FALSE, message=FALSE}
+means_array <-
+  c(
+    mean(iris$Sepal.Length),
+    mean(iris$Sepal.Width),
+    mean(iris$Petal.Length),
+    mean(iris$Petal.Width)
+  )
+sd_array <-
+  c(
+    sd(iris$Sepal.Length),
+    sd(iris$Sepal.Width),
+    sd(iris$Petal.Length),
+    sd(iris$Petal.Width)
+  )   
+p25_array <-
+  c(
+    quantile(iris$Sepal.Length, 0.25),
+    quantile(iris$Sepal.Width, 0.25),
+    quantile(iris$Petal.Length, 0.25),
+    quantile(iris$Petal.Width, 0.25)
+  )   
+p75_array <-
+  c(
+    quantile(iris$Sepal.Length, 0.75),
+    quantile(iris$Sepal.Width, 0.75),
+    quantile(iris$Petal.Length, 0.75),
+    quantile(iris$Petal.Width, 0.75)
+  )
+
+cols <- c('Mean', 'SD', 'P25', 'P75')
+rows <-
+  c('Sepal.Length', 'Sepal.Width', 'Petal.Length', 'Petal.Width')
+
+data_matrix <-
+  matrix(
+    data = c(means_array, sd_array, p25_array, p75_array),
+    nrow = 4,
+    ncol = 4,
+    dimnames = list(rows, cols)
+  )
+
+library(stargazer)
+stargazer(data_matrix, type = 'html', title = 'Summary Statistics Iris Data')
+```
+
+If you are working with `html` files and you want to modify tables attributes (width, styles, etc), I recommend to use a custom `.css` file to achieve this. You could declare it inside the document, or in an external file. You don't need to be an expert to program this settings, just google it and change the attributes until you are Ok with the results. If you want to go further, and customize your entire `html` check [this link](https://bookdown.org/yihui/rmarkdown-cookbook/html-css.html). For instance, we are using the following `css`:
+
+```
+table, td, th {
+  border: none;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+```
+
+My second example, is mainly directed for $\LaTeX$ users. I personally don't like how `stargazer` package handle the notes below the tables, and also do not support an option to resize the table. In this example, I will show an application of how I solved this.
+
+Let's estimate a model and produce an `stargazer` output. Some important considerations here is that we only want the code within the `tabular` environment. To get this, we need to specify the options `header` and `float` to `FALSE`. Also, as we don't want the notes so, we will leave it empty.
+```{r stargazer 2, warning=FALSE, message=FALSE}
+# 1) Estimate a linear model
+model <- lm(Sepal.Length ~ Sepal.Width + Petal.Length + Petal.Width, data=iris)
+
+# 2) Capture the stargazer output in an object.
+out <-
+  capture.output(
+    stargazer(
+      model,
+      type = "latex",
+      float = FALSE,
+      header = FALSE,
+      notes.label = '',
+      notes = '',
+      notes.append = FALSE,
+      notes.align = 'l'
+    )
+  )
+
+# 3) Collapse the array in a string
+tex_table <- paste(out, collapse = "\n")
+
+# 4) Define the settings of my table (title, labels, notes)
+caption <- 'My title'
+label <- 'tab:my_table'
+notes <- 'Own elaboration based on iris data.'
+```
+
+After we capture the output of stargazer in an object and collapse it in a string, we can use this objects together with inline code execution to fill a custom `.tex` table within our document. The $\LaTeX$ table will look like this:
+
+```
+{=latex}
+\begin{table}[H]
+\centering
+\caption{`(r) caption`}
+\label{`(r) label`}
+\resizebox{\textwidth}{!}{
+`(r) tex_table`
+}
+\begin{minipage}{\textwidth}
+\tiny \textbf{Notes}: `(r) notes` \par
+\end{minipage}
+\end{table}
+```
+
+```
+{=latex}
+\begin{table}[H]
+\centering
+\caption{`r caption`}
+\label{`r label`}
+\resizebox{\textwidth}{!}{
+`r tex_table`
+}
+\begin{minipage}{\textwidth}
+\tiny \textbf{Notes}: `r notes` \par
+\end{minipage}
+\end{table}
+```
+
+I want to point to important observations. In the first place, you must declare `{=latex}` in the chuck's header. This will allow Rmarkdown and the compiler that all the code that is within that chunk must be interpreted as `LaTex`, This will save you a lot of problems while compiling the document to pdf. In the second place, remember that it is necessary to include the package `float` in your document if you want to specify the option `[H]` in the `table` environment. I will cover this topic later!
 
 # Figures
 To include a figure, just create it using `plot` or `ggplot`.
