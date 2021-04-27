@@ -233,11 +233,12 @@ For more configurations, I suggest to check [this guide](https://bookdown.org/yi
 # Final Thoughts
 
 # References and Further reading
-- [R markdown from RStudio](https://rmarkdown.rstudio.com/lesson-1.html)
-- [R markdown from RStudio: Cheatsheet](https://rmarkdown.rstudio.com/lesson-15.html)
+- [R Markdown from RStudio](https://rmarkdown.rstudio.com/lesson-1.html)
+- [R Markdown from RStudio: Cheatsheet](https://rmarkdown.rstudio.com/lesson-15.html)
 - [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
-- [RMarkdown for Scientists](https://rmd4sci.njtierney.com)
+- [R Markdown for Scientists](https://rmd4sci.njtierney.com)
 - [Data Visualization with ggplot2](https://www.publichealth.columbia.edu/sites/default/files/media/fdawg_ggplot2.html)
 - [TikZ in R Markdown](https://stackoverflow.com/questions/27880563/tikz-in-r-markdown)
 - [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
 - [YAML](https://en.wikipedia.org/wiki/YAML)
+- [Bibliographies and Citations](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html)
