@@ -216,6 +216,15 @@ output:
     toc: yes
 ```
 
+In addition, this is the place to include a [bibliography](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html) for your document. Rmarkdown supports `json`, `bibtex`, and much other formats!
+```{yaml}
+title: "All you need is Rmarkdown!"
+output: 
+  bookdown::html_document2:
+    keep_md: False
+    toc: yes
+bibliography: bibliography.extension
+```
 
 For more configurations, I suggest to check [this guide](https://bookdown.org/yihui/rmarkdown/documents.html).
 
