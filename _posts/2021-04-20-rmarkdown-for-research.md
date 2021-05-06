@@ -15,7 +15,7 @@ Because I have encountered all the problems that I mentioned above, I started to
 
 I want to share some helpful practices that I adopted using `R Markdown` notebooks for all the online community in this post. Since `R Markdown` has many capabilities apart from manuscripts (i.e., Slides and Dashboards), I will focus on documents, especially in PDF outputs. It is worth mentioning that this post is not a complete revision of this fantastic tool's capabilities. Here, I tried to share my experience and include most of the tricks I use while working on my documents. Hope this post will help you!
 
-(The original `.Rmd` file used for this post is [here]({{site.baseurl}}/assets/code/all_you_need_is_rmd/all_you_need_is_rmd.Rmd). It is not exactly the same because the `.md` output it is not full compatible with the site's theme!)
+(The original `.Rmd` file used for this post is [here](https://github.com/ignacioriveros1/ignacioriveros1.github.io/blob/master/assets/code/all_you_need_is_rmd/all_you_need_is_rmd.rmd). It is not exactly the same because the `.md` output it is not full compatible with the site's theme!)
 
 # Creating an ``R Markdown`` document
 My preferred IDE to work in `R Markdown` is RStudio. To create a new notebook in RStudio, just click File > New File > `R Markdown`. You can specify the document type, output type (HTML, PDF, Word), and the template for each document type.
