@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Research
-subtitle: Here you will find my published articles and the current papers I'm working on
+subtitle: Here you will find my current and past research projects.
 permalink: /research
 ---
 

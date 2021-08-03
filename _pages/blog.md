@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Posts
-subtitle: Hope that you will find something useful here!
+subtitle: I like to share my knowledge about things that help me work smarter. Hope that you will find something useful here!
 
 permalink: /posts
 ---

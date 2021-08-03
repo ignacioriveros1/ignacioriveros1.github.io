@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Resources
+subtitle: Coding and miscellaneous stuff... 
 permalink: /resources
 usemathjax: true
 ---
