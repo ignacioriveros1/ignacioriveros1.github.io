@@ -6,12 +6,10 @@ permalink: /about
 
 <img src="/assets/images/profile-pic.png" id="about-img">
 
-I'm a Chilean data scientist and economist. My main interests are related to the generation and application of knowledge and information technology to improve people's lives through evidence-based public policy.
+Before going to graduate school, I worked as a *data scientist* at [ConsiliumBots](https://www.consiliumbots.com/){:target="_blank"}. This organization's primary purpose is to leverage information technologies and underused administrative data to deliver precise and legible information to improve decision-making in educational markets. My main task was to develop software pieces to clean administrative data, match many students and schools in centralized school systems, and develop APIs to deliver information for the organization's web services (recommendation systems, report cards, chatbots).
 
-I worked as a data scientist at [ConsiliumBots](https://www.consiliumbots.com/){:target="_blank"}. Here, I worked in projects related to leveraging information technologies and underused administrative data to deliver precise and legible information to improve decision making in educational markets. I wrote several software pieces to clean data, match students and schools, simulate congestion in centralized school systems, and recommend college options. In addition, with Consilium's team, we participated in a fantastic project about [COVID-19 and Small Businesses](https://covid19sbs.org/){:target="_blank"}.
+Meanwhile, I worked as an independent researcher with scholars from the Catholic University of Chile. In the [first one ]({{site.base_url}}/research/earthquakes_and_economics.html), we studied the medium-term impact of the 2010 Earthquake in Chile on the economic activity of the country's most affected municipalities. In the [second one]({{site.base_url}}/research/rents-and-politics.html), we explore the politics of equalization grants in Chile.
 
-In parallel, I have been working as a part-time researcher in a joint project of the [Public Policy School](http://gobierno.uc.cl/es/){:target="_blank"} at the Catholic University of Chile and [CIGIDEN](https://www.cigiden.cl/en/home/){:target="_blank"}. In this [research project]({{site.base_url}}/research/earthquakes_and_economics.html), we studied the medium-term impact of the 2010 Earthquake in Chile on most affected counties' economic activity. The primary purpose of this project is to build resilience against *socio-natural disasters*.
+I have several hobbies. I love to practice sports (I'm always open to this type of invitation). In particular, I like to play tennis, road cycling, surfing, climbing, and running. Also, I enjoy cooking, primarily Chilean food.
 
-I have several hobbies. In the first place, I like computers and programming. I consider myself an amateur programmer, being `python` my favorite language. I also have experience coding in `rstats` and `stata`. Also, I love to practise sports. I practice bouldering and sport climbing, and I am discovering the world of road cycling.
-
-[Download CV](https://www.dropbox.com/s/cjeofy4j2y69kfe/CV_2.pdf?dl=0){:target="_blank"}
+[Download CV](https://www.dropbox.com/s/zuq1p78cv9hctm2/CV_2.pdf?dl=0){:target="_blank"}
