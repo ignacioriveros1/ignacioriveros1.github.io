@@ -10,6 +10,19 @@
 
     gtag('config', 'G-TJG4RDWL1S');
 </script>
+
+<script>
+        function showHide(id_name) {
+        var x = document.getElementById("research_list");
+        var div = x.getElementsByTagName('div').namedItem(id_name);
+        if (div.style.display === "none") {
+        div.style.display = "block";
+        } else {
+        div.style.display = "none";
+        }
+        }
+</script>
+
 {% include meta_tags/base.html %}
 {% include externals/styling.html %}
 </head>
