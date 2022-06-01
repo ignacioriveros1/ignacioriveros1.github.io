@@ -22,4 +22,4 @@ In this site you will find:
 **E-mail**: `iriveros@marshall.usc.edu`
 
 ## Featured Research
-- Check our new paper! [Medium-run Local Economic Effects of a Major Earthquake (2022)]({{site.baseurl}}/research/earthquakes_and_economics) (with Paula Aguirre, Kenzo Asahí, Diego Diaz, and Rodrigo Valdés), published at the Journal of Economic Geography.
+- Check our new paper! [Medium-run Local Economic Effects of a Major Earthquake (2022)]({{site.baseurl}}/research) (with Paula Aguirre, Kenzo Asahí, Diego Diaz, and Rodrigo Valdés), published at the Journal of Economic Geography.
