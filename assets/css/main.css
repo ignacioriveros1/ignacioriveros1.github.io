@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* =Base *//*************************************************************/
   body {
-    font-family: 'Quicksand', sans-serif;  
+    font-family: 'Roboto', sans-serif;  
     font-size: 100%;
     color: #012;
     background-color: #FFF; }
@@ -42,7 +42,7 @@
       font-weight: 400; }
 
   strong {
-    color: #4a9F81; }
+    color: #990000; }
 
   .wrapper {
     max-width: 800px;
@@ -58,11 +58,11 @@
   .logo {
     font-size: 300%;
     font-weight: 700;
-    color: #4a9F81;
+    color: #990000;
     display: block; }
 
   .menu {
-    color: #4a9F81;
+    color: #990000;
     font-size: 120%;
     margin: 0px;
     margin-top: 6px;
@@ -81,7 +81,7 @@
   .social-links {
     float: right;
     font-size: 150%;
-    color: #059D;
+    color: #990000;
     list-style-type: none; }
 
   .social-links__entry {
@@ -147,7 +147,7 @@
 
 /* =Post page *//*************************************************************/
   .about {
-    color: #828282;
+    color: #990000;
     text-align: center;
     line-height: 24px; }
 
