@@ -5,7 +5,7 @@ subtitle: Here you will find my current and past research projects.
 permalink: /research
 ---
 
-<div>
+<div id="research_list"> 
 {% assign researchsCategory = site.research | group_by_exp:"research", "research.category"  %}
 {% for category in researchsCategory %}
 <h4 class="research-teaser__month">
@@ -22,20 +22,43 @@ permalink: /research
 <ul class="list-researchs">
 {% for research in category.items %}
 <li class="research-teaser">
-<a href="{{ research.url | prepend: site.baseurl }}">
 <span class="research-teaser__title"> 
   {{ research.title }}
 </span>
-</a>
-{% if research.journal %} 
-- <i> {{ research.journal }}  </i>
-{% endif %}
-{% if research.pub_year %}
-- {{ research.pub_year }}
-{% endif %}
+
 {% if research.coauthors %} 
- <br> <i> with {{ research.coauthors }} </i>
+ <br> <i> with {{ research.coauthors }}</i>
 {% endif %}
+
+{% if research.journal %} 
+, <i> {{ research.journal }} </i>
+{% endif %}
+
+{% if research.pub_year %}
+, {{ research.pub_year }}
+{% endif %}
+
+{% if research.files.manuscript %}
+<a href="{{ research.files.manuscript }}" >Manuscript</a>, 
+{% endif %}
+
+{% if research.files.repfiles %}
+<a href="{{ research.files.repfiles }}" >Replication Files</a>, 
+{% endif %}
+
+{% if research.files.oa %}
+<a href="{{ research.files.oa }}" >Online Appendix</a>
+{% endif %}
+
+{% if research.abstract %}
+<br>
+<a onclick="showHide( '{{ research.title }}' )">Show/Hide Abstract </a>
+  <div id= "{{ research.title }}" style="display:none">
+    {{ research.abstract }}
+  </div>
+{% endif %}
+
+
 </li>
 {% endfor %}
 </ul>
