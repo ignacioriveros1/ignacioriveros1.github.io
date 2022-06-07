@@ -4,7 +4,7 @@ title: About Me
 permalink: /about
 ---
 
-<img src="/assets/images/profile-pic.png" id="about-img">
+<img src="/assets/images/profile-pic-2.png" id="about-img">
 
 Before going to graduate school, I worked as a *data scientist* at [ConsiliumBots](https://www.consiliumbots.com/){:target="_blank"}. This organization's primary purpose is to leverage information technologies and underused administrative data to deliver precise and legible information to improve decision-making in educational markets. My main task was to develop software pieces to clean administrative data, match many students and schools in centralized school systems, and develop APIs to deliver information for the organization's web services (recommendation systems, report cards, chatbots).
 
