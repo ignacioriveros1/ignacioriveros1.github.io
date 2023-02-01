@@ -1,12 +1,12 @@
 ---
 layout: research
-title: Fiscally Progressive While Politically Regressive? Rethinking the Politics of Fiscal Rentierism 
+title: Do Transfers Affect Local Politics? Reassessing Fiscal Rentierism in Chile 
 category: [Working Papers]
-# pub_year: 2021
-# journal: J. of Economic Geography (R & R)
+# pub_year: 2023
+journal: LAPS (minor revision)
 coauthors: "Carla Alberti and Diego Díaz"
-abstract: Existing literature concurs that intergovernmental transfers breed rentierism when local governments receive more money in fiscal transfers than what they contribute in taxes to fund those grants. Nonetheless, there is a mismatch between the concept of fiscal rentierism and existing measures, which take the whole transfers local governments receive, lumping together tax and nontax income. We study the Fondo Común Municipal (FCM), an equalization grant in Chile, and provide a novel measure of fiscal rents that identifies what corresponds to a subsidy and, therefore, to nontax income. We revisit the rentier hypotheses, comparing the effects of FCM transfer and FCM subsidy on different outcomes. Our findings confirm that fiscal rents increase incumbency advantage. Additionally, we find that the association between rents and competitiveness disappears when using FCM subsidy. Lastly, both measures increase public spending. However, for all of our outcomes, FCM transfer significantly overestimates the effects of fiscal rents.  
+abstract: Extant literature concurs that fiscal transfers affect governance when they grant subnational governments nontax revenue. Nonetheless, there is a mismatch between the concept of fiscal rents and existing measures, which consider the whole transfers local governments receive, including both tax and nontax revenue. We study the Fondo Común Municipal (FCM), the most important intergovernmental grant in Chile, and provide a novel measure of nontax revenue. We use this new measure alongside the whole FCM transfer to test the rentier hypothesis. On the one hand, we show that both measures increase the incumbent party vote share, although the effect of our measure is substantially smaller. On the other hand, we find that the FCM transfer has a strong impact on the probability of reelection and the competitiveness of elections, but this effect disappears when using our measure. Overall, our findings suggest that fiscal rents do not lead to strong electoral dominance.
 ---
 
-- **Manuscript coming soon!**
+- 
 <!-- - **Media Coverage** : [VoX](https://jekyllrb.com/docs/datafiles/) -->
