@@ -39,15 +39,16 @@ permalink: /research
 {% endif %}
 
 {% if research.files.manuscript %}
-<a href="{{ research.files.manuscript }}" >Manuscript</a>, 
+<br>
+<a href="{{ research.files.manuscript }}" >Manuscript</a>
 {% endif %}
 
 {% if research.files.repfiles %}
-<a href="{{ research.files.repfiles }}" >Replication Files</a>, 
+<a href="{{ research.files.repfiles }}" >- Replication Files</a> 
 {% endif %}
 
 {% if research.files.oa %}
-<a href="{{ research.files.oa }}" >Online Appendix</a>
+<a href="{{ research.files.oa }}" >- Online Appendix</a>
 {% endif %}
 
 {% if research.abstract %}
@@ -63,4 +64,5 @@ permalink: /research
 {% endfor %}
 </ul>
 {% endfor %}
+
 </div>
