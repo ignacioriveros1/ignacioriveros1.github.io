@@ -24,4 +24,4 @@ In this site you will find:
 **E-mail**: `iriveros[at]marshall[dot]usc[dot]edu`
 
 ## Featured Research
-- Check our new paper! [Medium-run Local Economic Effects of a Major Earthquake (2022)]({{site.baseurl}}/research) (with Paula Aguirre, Kenzo Asahí, Diego Diaz, and Rodrigo Valdés), published at the Journal of Economic Geography.
+- Check our new paper! [Do Fiscal Transfers Affect Local Democracy? Lessons from Chilean Municipalities]({{site.baseurl}}/research) (with Carla Alberti and Diego Diaz)!

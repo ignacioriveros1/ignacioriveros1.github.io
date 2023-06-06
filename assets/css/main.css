@@ -138,7 +138,8 @@
 
   .research-teaser__title {
     font-size: 100%;
-    color: #828282; }
+    color: #060000; 
+    font-weight: 700; }
 
   .research-teaser__month {
     width: 100%;
