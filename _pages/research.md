@@ -6,7 +6,8 @@ permalink: /research
 ---
 
 <div id="research_list"> 
-{% assign researchsCategory = site.research | group_by_exp:"research", "research.category"  %}
+{% assign sortedResearch = site.research | sort: 'category' %}
+{% assign researchsCategory = sortedResearch | group_by_exp:"research", "research.category" %}
 {% for category in researchsCategory %}
 <h4 class="research-teaser__month">
 <strong>

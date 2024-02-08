@@ -1,7 +1,7 @@
 ---
 layout: research
 title: Do Fiscal Transfers Affect Local Democracy? Lessons from Chilean Municipalities
-category: [Publications]
+category: [2-Publications]
 pub_year: 2023
 journal: Latin American Politics and Society
 coauthors: "Carla Alberti and Diego Díaz"

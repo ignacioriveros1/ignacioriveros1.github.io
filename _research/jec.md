@@ -1,7 +1,7 @@
 ---
 layout: research
 title: "Heterogeneous effects of Lengthening the School Day on Students Academic Achievement: a Longitudinal Study of Full Day School Reform in Chile (Master Thesis)"
-category: [Working Papers]
+category: [1-Working Papers]
 # pub_year: 2021
 journal: (under revision)
 coauthors: Dante Contreras, and Ignacio Lepe

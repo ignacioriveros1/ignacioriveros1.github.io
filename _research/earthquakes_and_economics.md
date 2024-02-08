@@ -1,7 +1,7 @@
 ---
 layout: research
 title: Medium-run Local Economic Effects of a Major Earthquake
-category: [Publications]
+category: [2-Publications]
 pub_year: 2022
 journal: Journal of Economic Geography
 coauthors: "Paula Aguirre, Kenzo Asahí, Diego Díaz and Rodrigo Valdés"
