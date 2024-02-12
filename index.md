@@ -6,7 +6,7 @@ sitemap:
   priority: 0.9
 ---
 
-<img src="/assets/images/profile-pic-1.png" id="about-img">
+<img src="/assets/images/profile-pic-3.png" id="about-img">
 
 ## Welcome!
 I’m Ignacio Riveros, a third-year Ph.D. student in Quantitative Marketing at the [USC Marshall School of Business](https://www.marshall.usc.edu){:target="_blank"}. In my research, I try to measure and quantify the effects of different socio-political events on industries and markets. Specifically, I have explored how brands' sociopolitical stands impact customer store visits. Before joining USC, I worked as a data scientist at [ConsiliumBots](https://www.consiliumbots.com/), a non-profit Ed-tech startup. 
