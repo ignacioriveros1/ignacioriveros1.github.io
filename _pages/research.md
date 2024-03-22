@@ -22,7 +22,7 @@ permalink: /research
 
 
 ## Working Papers
-**Heterogeneous effects of Lengthening the School Day on Students' Academic Achievement: a Longitudinal Study of Full Day School Reform in Chile** (with Dante Contreras and Ignacio Lepe) submitted.
+[**Heterogeneous effects of Lengthening the School Day on Students' Academic Achievement: a Longitudinal Study of Full Day School Reform in Chile**](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4734910) (with Dante Contreras and Ignacio Lepe) submitted.
 - <a onclick="showHide( 'jec' )">**Abstract** </a>
   <div id= "jec" style="display:none">
     This paper studies the effects of a large and gradual increase in the Chilean school day over students' academic achievement. We exploit a gradual and exogenous variation produced by the reform with an innovative measure of exposure to longer school day treatment. Using longitudinal data at an individual level and a fixed-effects strategy, we find that in the long run, this reform had no relevant effect on students’ standardized test scores nor higher education enrollment. However, this paper found heterogeneous response to additional instructional time by gender, type of school, and socioeconomic status. These results are robust to the inclusion of several covariates and insensible to the cohort selection.
@@ -35,6 +35,7 @@ permalink: /research
   <div id= "aircrime" style="display:none">
     This study investigates the impact of short-term rentals (STRs) on property-related crimes. We use a dataset of approximately half a million properties listed on Airbnb between 2008 and 2019 in 12 selected cities and incident-level crime data to answer the research question. Using STRs regulations across different cities as a source of exogenous variation for the supply of Airbnb, we present several findings. First, the direct association between Airbnb supply and crime incidence suggests a negative correlation between property crime and Airbnb supply, indicating that reducing the number of Airbnb listings in a neighborhood may coincide with increasing property crime. Second, after the implementation of STR regulations, the supply of Airbnb decreased considerably, and the number of property crimes increased in the medium run (6 to 12 months).
   </div>
+
 
 **The Effects of Brand Involvement in Sociopolitical Events on Consumer Store Visits** (with Tal Shoshani and Lan Luo).
 - <a onclick="showHide( 'political-stance' )">**Abstract** </a>
