@@ -19,7 +19,7 @@ In this site you will find:
 - My [research projects]({{site.baseurl}}/research). 
 - Some brief [posts]({{site.baseurl}}/posts), oriented to programming issues. 
 - Miscellaneous [resources]({{site.baseurl}}/resources), with software and external links.
-- My [CV](https://www.dropbox.com/s/aoyp715zbvr7yya/CV_2.pdf?dl=0)
+- My [CV]({{site.baseurl}}/assets/cv.pdf)
 
 **E-mail**: `iriveros[at]marshall[dot]usc[dot]edu`
 
