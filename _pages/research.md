@@ -22,21 +22,31 @@ permalink: /research
 
 
 ## Working Papers
-[**Made with AI: Consumer Engagement with Media Containing AI Disclosures**](https://papers.ssrn.com/abstract=4988760) (with [Steve Carney](https://www.stephancarney.com/) and [Stephanie Tully](https://www.marshall.usc.edu/personnel/stephanie-tully)). *Under Review*
+[**Made with AI: Consumer Engagement with Social Media Containing AI Disclosures**](https://papers.ssrn.com/abstract=4988760) (with [Steve Carney](https://www.stephancarney.com/) and [Stephanie Tully](https://www.marshall.usc.edu/personnel/stephanie-tully)). *Under Review*
 
 - <a onclick="showHide( 'aigc' )">**Abstract** </a>
   <div id= "aigc" style="display:none">
-    Artificial intelligence-generated content (AIGC) is revolutionizing how media is created and consumed. Calls for transparency have led media platforms to introduce disclosures that identify the use of AIGC. However, the use of AIGC disclosures may have consequences beyond transparency. This research examines how AIGC disclosures impact consumer engagement, a critical success metric for content creators, platforms, and brands. Engagement behavior on TikTok following the introduction of AIGC disclosures and preregistered experiments show that disclosures reduce consumer engagement with content containing AIGC disclosures. This reduction does not stem from differences in the real or perceived quality of the content, nor because of perceived differences in inauthenticity or deception. Moreover, our results suggest differences in disclosure design or implementation are unlikely to mitigate these effects. We provide evidence that lower engagement results from a reduced sense of connection with the content creator. We discuss the implications of these findings for content creator compliance, and their downstream consequences for media platforms, marketers, and policymakers.
+    Social media shapes how people connect, communicate and consume information. As generative artificial intelligence (AI) becomes an increasingly common tool for content creation, many platforms have introduced disclosure requirements to inform consumers when content has been created or significantly edited by AI. Yet, little is known about how such AI-generated content (AIGC) disclosures influence consumer engagement—a key metric for creators, platforms, and brands—in part due to the unique setting of social media relative to other examinations of responses to AI. This research examines whether and why AIGC disclosures affect engagement on social media. Analysis of engagement behavior on TikTok following the introduction of AIGC disclosures and six preregistered experiments find that disclosures reduce consumer engagement. This reduction does not stem from content-related explanations such as lower perceived quality or concerns about manipulation. Instead, we identify a novel process: AIGC disclosures reduce parasocial connection—one-sided emotional bonds between consumers and creators—by signaling reduced effort from the creator. As such, disclosures that signal greater effort can mitigate reductions in engagement. We discuss the implications of these findings for platform policy, content creator strategy, and the future design of AI disclosure practices.
   </div>
 
-[**Heterogeneous effects of Lengthening the School Day on Students' Academic Achievement: a Longitudinal Study of Full Day School Reform in Chile**](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4734910) (with [Dante Contreras](https://econ.uchile.cl/es/academico/dcontrer) and Ignacio Lepe).
-- <a onclick="showHide( 'jec' )">**Abstract** </a>
-  <div id= "jec" style="display:none">
-    This paper studies the effects of a large and gradual increase in the Chilean school day over students' academic achievement. We exploit a gradual and exogenous variation produced by the reform with an innovative measure of exposure to longer school day treatment. Using longitudinal data at an individual level and a fixed-effects strategy, we find that in the long run, this reform had no relevant effect on students’ standardized test scores nor higher education enrollment. However, this paper found heterogeneous response to additional instructional time by gender, type of school, and socioeconomic status. These results are robust to the inclusion of several covariates and insensible to the cohort selection.
-  </div>
+
+
+
 
 
 ## Research in Progress
+[**The Effects of Brand Involvement in Sociopolitical Events on Consumer Store Visits (NEW DRAFT)**](https://www.dropbox.com/scl/fi/4gl9e1s1ifd14yruhuzfk/political_stance.pdf?rlkey=ym6jsy836iri8x8h5jtobd28r&dl=1) (with [Tal Shoshani](https://www.marshall.usc.edu/personnel/tal-shoshani) and [Lan Luo](https://faculty.marshall.usc.edu/Lan-Luo/)).
+- <a onclick="showHide( 'political-stance' )">**Abstract** </a>
+  <div id= "political-stance" style="display:none">
+    We investigate the impact of brand sociopolitical involvement on consumer store visits. We assemble a unique dataset of news articles to identify brand sociopolitical involvement and combine it with foot traffic data from about 150,000 stores operated by 47 major US brands. We then employ the synthetic difference-in-differences model to measure the effect of each identified event. Our results show that, on average, brand involvement in sociopo- litical issues leads to a modest 0.8% decline in foot traffic, with effects varying substantially across events. Through detailed case studies—such as Walmart’s firearm sales restrictions, a Starbucks racial profiling incident, and Chick-fil-A’s change in LGBTQ+ donation pol- icy—we highlight how consumer responses depend on the initiator of the involvement, store neighborhood characteristics, and the brand’s response. Events initiated by corpo- rate leadership tend to produce more variable and less negative outcomes compared to those triggered by employees. Company response to non-corporate incidents—such as is- suing public apologies or conducting employee training—can mitigate negative consumer reactions. Finally, service-oriented brands are more susceptible to negative impacts, likely due to the salience of customer-employee interactions.
+  </div>
+
+**Sharing the Road: The Effect of Micromobility Infrastructure on Retail Store Visits** (with [Lan Luo](https://faculty.marshall.usc.edu/Lan-Luo/)).
+- <a onclick="showHide( 'bikeways' )">**Abstract** </a>
+  <div id= "bikeways" style="display:none">
+    This study investigates the impact of bikeway expansions on retail foot traffic in Los Angeles and Seattle from 2021 to 2023. Using detailed foot traffic data and bikeway expansion information, we use a fixed-effects model to estimate changes in store visitation due to changes in bikeway proximity. Our results indicate that bikeways increase monthly foot traffic by 3.1% to 4.1% for nearby businesses. These findings highlight the importance of tailoring urban planning to the diverse needs of retail sectors and underscore the economic potential of micromobility investments in revitalizing urban retail environments.
+  </div>
+
 <!-- **The Effect of Short-Term Rentals on Property Crime** (with [Davide Proserpio](https://dadepro.github.io/)).
 - <a onclick="showHide( 'aircrime' )">**Abstract** </a>
   <div id= "aircrime" style="display:none">
@@ -44,12 +54,14 @@ permalink: /research
   </div> -->
 
 
+## Inactive Papers
 
-**The Effects of Brand Involvement in Sociopolitical Events on Consumer Store Visits** (with [Tal Shoshani](https://www.marshall.usc.edu/personnel/tal-shoshani) and [Lan Luo](https://faculty.marshall.usc.edu/Lan-Luo/)).
-- <a onclick="showHide( 'political-stance' )">**Abstract** </a>
-  <div id= "political-stance" style="display:none">
-    This research aims to empirically investigate whether and how brands' sociopolitical stands shape customer store visits in the US. We explore answers to the following questions: (1) How has the political polarization in stores' clientele composition evolved over the last few years (2019-2022) in the US? (2) Whether brands' sociopolitical stands play a role in this evolution? (3) If so, are store visits of certain brands sensitive to particular types of sociopolitical events? We use foot traffic data to identify brands' physical stores and track visits to their stores, detailed by which census block groups consumers come from. Second, we utilize voting data at the precinct level of the 2020 presidential election to capture political preference heterogeneity. We then merge these two data sets to create a novel and granular measure of the political customer profile for each store and week between 2019 and 2022. Third, we gauge the stands of a large number of brands on all significant sociopolitical events during this period based on conversations on social media. We further examine the extent to which customer store visits vary based on the sociopolitical stands of these brands. This study expands upon previous research by offering insights into whether and how US consumers from a large and diverse set of popular brands alter their store visit behavior in response to these brands' stands on various sociopolitical events.
+[**Heterogeneous effects of Lengthening the School Day on Students' Academic Achievement: a Longitudinal Study of Full Day School Reform in Chile**](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4734910) (with [Dante Contreras](https://econ.uchile.cl/es/academico/dcontrer) and Ignacio Lepe). This paper is based on my Master's Thesis.
+- <a onclick="showHide( 'jec' )">**Abstract** </a>
+  <div id= "jec" style="display:none">
+    This paper studies the effects of a large and gradual increase in the Chilean school day over students' academic achievement. We exploit a gradual and exogenous variation produced by the reform with an innovative measure of exposure to longer school day treatment. Using longitudinal data at an individual level and a fixed-effects strategy, we find that in the long run, this reform had no relevant effect on students’ standardized test scores nor higher education enrollment. However, this paper found heterogeneous response to additional instructional time by gender, type of school, and socioeconomic status. These results are robust to the inclusion of several covariates and insensible to the cohort selection.
   </div>
+
 
 
 
