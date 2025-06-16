@@ -35,7 +35,10 @@ permalink: /research
 
 
 ## Research in Progress
-[**The Effects of Brand Involvement in Sociopolitical Events on Consumer Store Visits (NEW DRAFT)**](https://www.dropbox.com/scl/fi/4gl9e1s1ifd14yruhuzfk/political_stance.pdf?rlkey=ym6jsy836iri8x8h5jtobd28r&dl=1) (with [Tal Shoshani](https://www.marshall.usc.edu/personnel/tal-shoshani) and [Lan Luo](https://faculty.marshall.usc.edu/Lan-Luo/)).
+**Politics in Aisle 3: Whether and How Brand Sociopolitical Involvement Shapes Customer Store Visits** (with [Tal Shoshani](https://www.marshall.usc.edu/personnel/tal-shoshani) and [Lan Luo](https://faculty.marshall.usc.edu/Lan-Luo/)).
+
+
+
 - <a onclick="showHide( 'political-stance' )">**Abstract** </a>
   <div id= "political-stance" style="display:none">
     We investigate the impact of brand sociopolitical involvement on consumer store visits. We assemble a unique dataset of news articles to identify brand sociopolitical involvement and combine it with foot traffic data from about 150,000 stores operated by 47 major US brands. We then employ the synthetic difference-in-differences model to measure the effect of each identified event. Our results show that, on average, brand involvement in sociopo- litical issues leads to a modest 0.8% decline in foot traffic, with effects varying substantially across events. Through detailed case studies—such as Walmart’s firearm sales restrictions, a Starbucks racial profiling incident, and Chick-fil-A’s change in LGBTQ+ donation pol- icy—we highlight how consumer responses depend on the initiator of the involvement, store neighborhood characteristics, and the brand’s response. Events initiated by corpo- rate leadership tend to produce more variable and less negative outcomes compared to those triggered by employees. Company response to non-corporate incidents—such as is- suing public apologies or conducting employee training—can mitigate negative consumer reactions. Finally, service-oriented brands are more susceptible to negative impacts, likely due to the salience of customer-employee interactions.
