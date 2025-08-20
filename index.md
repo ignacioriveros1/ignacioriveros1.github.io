@@ -6,7 +6,7 @@ sitemap:
   priority: 0.9
 ---
 
-<img src="/assets/images/profile-pic-3.png" id="about-img">
+<img src="/assets/images/picofme.png" id="about-img">
 
 ## Welcome!
 I’m Ignacio Riveros, a fourth-year Ph.D. candidate in Quantitative Marketing at the [USC Marshall School of Business](https://www.marshall.usc.edu){:target="_blank"}.
