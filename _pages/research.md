@@ -22,7 +22,7 @@ permalink: /research
 
 
 ## Working Papers
-[**Made with AI: Consumer Engagement with Social Media Containing AI Disclosures**](https://papers.ssrn.com/abstract=4988760) (with [Steve Carney](https://www.stephancarney.com/) and [Stephanie Tully](https://www.marshall.usc.edu/personnel/stephanie-tully)). *Under Review*
+[**Made with AI: Consumer Engagement with Social Media Containing AI Disclosures**](https://papers.ssrn.com/abstract=4988760) (with [Steve Carney](https://www.stephancarney.com/) and [Stephanie Tully](https://www.marshall.usc.edu/personnel/stephanie-tully)). *(R&R Journal of Consumer Research)*
 
 - <a onclick="showHide( 'aigc' )">**Abstract** </a>
   <div id= "aigc" style="display:none">
