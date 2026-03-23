@@ -22,7 +22,7 @@ permalink: /research
 
 
 ## Working Papers
-[**Made with AI: Consumer Engagement with Social Media Containing AI Disclosures**](https://papers.ssrn.com/abstract=4988760) (with [Steve Carney](https://www.stephancarney.com/) and [Stephanie Tully](https://www.marshall.usc.edu/personnel/stephanie-tully)). *(R&R Journal of Consumer Research)*
+[**Made with AI: Consumer Engagement with Social Media Containing AI Disclosures**](https://papers.ssrn.com/abstract=4988760) (with [Steve Carney](https://www.stephancarney.com/) and [Stephanie Tully](https://www.marshall.usc.edu/personnel/stephanie-tully)). *(Conditionally Accepted, Journal of Consumer Research)*
 
 - <a onclick="showHide( 'aigc' )">**Abstract** </a>
   <div id= "aigc" style="display:none">
@@ -39,7 +39,7 @@ We examine how brands’ sociopolitical involvement affects customer store visit
 **Sharing the Road: The Effect of Micromobility Infrastructure on Retail Store Visits** (with [Lan Luo](https://faculty.marshall.usc.edu/Lan-Luo/)).
 - <a onclick="showHide( 'bikeways' )">**Abstract** </a>
   <div id= "bikeways" style="display:none">
-    This study investigates the impact of bikeway expansions on retail foot traffic in Los Angeles and Seattle from 2021 to 2023. Using detailed foot traffic data and bikeway expansion information, we use a fixed-effects model to estimate changes in store visitation due to changes in bikeway proximity. Our results indicate that bikeways increase monthly foot traffic by 3.1% to 4.1% for nearby businesses. These findings highlight the importance of tailoring urban planning to the diverse needs of retail sectors and underscore the economic potential of micromobility investments in revitalizing urban retail environments.
+    Micromobility infrastructure is expanding rapidly, yet large-scale evidence on how bikeway networks affect nearby retail demand remains limited. We study the City of Los Angeles and link month-by-month bikeway corridor additions to a high-frequency store--month panel of customer visits from January 2021 to December 2023 (32,382 stores; 1.09 million store-months). Using a difference-in-differences design with store and time fixed effects, we find that each additional bikeway corridor within 400 meters increases monthly visits by about 3--4%. These estimates are robust to alternative specifications, including different measures of bikeway exposure and different exposure radii. The timing of the gains is consistent with routine short trips: effects are larger on weekdays than weekends and concentrate in evening hours (6--11pm). Effects are heterogeneous across retailers. Increases are strongest for low-baseline-traffic establishments and for Food & Beverage, particularly informal, neighborhood-oriented formats (e.g., casual full-service and specialty/ethnic restaurants, cafes, and bakeries) rather than quick-service or convenience businesses. Finally, the largest gains occur when bikeways are added to previously unserved areas, with smaller incremental benefits once multiple nearby corridors are already in place.
   </div>
 
 <!-- **The Effect of Short-Term Rentals on Property Crime** (with [Davide Proserpio](https://dadepro.github.io/)).
