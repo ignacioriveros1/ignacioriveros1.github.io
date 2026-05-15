@@ -3,6 +3,7 @@ layout: page
 title: Resources
 subtitle: Coding and miscellaneous stuff... 
 permalink: /resources
+published: false
 usemathjax: true
 ---
 

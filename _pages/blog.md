@@ -2,6 +2,7 @@
 layout: page
 title: Posts
 subtitle: I like to share my knowledge about things that help me work smarter. Hope that you will find something useful here!
+published: false
 
 permalink: /posts
 ---

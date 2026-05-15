@@ -16,6 +16,11 @@ author:
 
 include: ['_pages']
 
+exclude:
+  - _pages/blog.md
+  - _pages/resources.md
+  - _posts
+
 
 # Syntax highlighting
 highlightstyle: 'agate'
